@@ -54,7 +54,18 @@ class MinHeap {
 
     }
 
-
+    public static List<Integer> BuildMinHeap(List<Integer> array){
+        int heapSize = array.size();
+        int numOfNonLeafNode = (heapSize/2)-1;
+        //System.out.println("Size: " + numOfNonLeafNode);
+        /**
+         * The for loop has to run until 0 index to reach the root of the tree
+         * **/
+        for(int i=numOfNonLeafNode; i>=0; i--){
+            siftDown(array, i);
+        }
+        return array;
+    }
 
     /**
      * The parent node with left and/or right child pass as a parameter to
@@ -64,8 +75,9 @@ class MinHeap {
     public static void siftDown(List<Integer> array, int i){
         //System.out.println("lastIdx: " + i);
         int heapSize = array.size()-1;
-        int left = (2*i)+1;
+        int left = (2*i) +1;
         int right = (2*i) +2;
+        //System.out.println("Root: " + array.get(i) + " left: " + array.get(left) + " right: " + array.get(right));
         int smallest;
         /**
          * check weather the left child is larger than the parent
@@ -125,19 +137,6 @@ class MinHeap {
         siftDown(array, 0);
     }
 
-    public static List<Integer> BuildMinHeap(List<Integer> array){
-        int heapSize = array.size();
-        int numOfNonLeafNode = (heapSize/2)-1;
-        //System.out.println("Size: " + numOfNonLeafNode);
-        /**
-         * The for loop has to run until 0 index to reach the root of the tree
-         * **/
-        for(int i=numOfNonLeafNode; i>=0; i--){
-            siftDown(array, i);
-        }
-        return array;
-    }
-
     /**
      * Insert the value at the end of the list and use sift up method until the current value satisfies the Heap property
      * **/
@@ -147,9 +146,10 @@ class MinHeap {
          * Step 2: perform a sift-Up operation until the current node satisfy the MinHeap property
          * **/
         array.add(value);
-        siftUp(array, array.lastIndexOf(array));
+        siftUp(array, array.size()-1);
 
     }
+
     /**
      * This method push the value that has been passed at the current index until it satisfies the Heap property
      * **/
