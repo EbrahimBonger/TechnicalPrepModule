@@ -104,12 +104,24 @@ class MinHeap {
      * Step 3: perform a sift-down operation until the current node satisfy the MinHeap property
      * **/
     public static void remove(List<Integer> array){
+        /**
+         * Check if the array is not empty
+         * **/
         if(array.isEmpty() == false){
             int lastIdx = array.size()-1;
-            //System.out.println("size: " + array.size());
+            /**
+             * Take the root value and swap it with the value at the last index,
+             * then
+             * **/
             swap(array, 0, lastIdx);
+            /**
+             * Remove the value at the last index
+             * **/
             array.remove(lastIdx);
         }
+        /**
+         * Then start sifting down from the root node until it satisfies the Heap property
+         * **/
         siftDown(array, 0);
     }
 
@@ -127,15 +139,24 @@ class MinHeap {
     }
 
     /**
-     * Step 1: add the coming value at the end (from left to right) of the Heap tree
-     * Step 2: perform a sift-Up operation until the current node satisfy the MinHeap property
+     * Insert the value at the end of the list and use sift up method until the current value satisfies the Heap property
      * **/
     public static void insert(List<Integer> array, int value){
+        /**
+         * Step 1: add the coming value at the end (from left to right) of the Heap tree
+         * Step 2: perform a sift-Up operation until the current node satisfy the MinHeap property
+         * **/
         array.add(value);
         siftUp(array, array.lastIndexOf(array));
 
     }
+    /**
+     * This method push the value that has been passed at the current index until it satisfies the Heap property
+     * **/
     public static void siftUp(List<Integer> array, int currentIdx){
+        /**
+         * Calculate the parent's index respect to the current's index
+         * **/
         int parent = (currentIdx -1)/2;
         while(currentIdx > 0 && array.get(currentIdx) < array.get(parent)){
             swap(array, currentIdx, parent);
@@ -149,7 +170,9 @@ class MinHeap {
         }
     }
 
-
+    /**
+     * Return the top value if the list is not empty
+     * **/
     public static int peak(List<Integer> array){
         int top = array.size()>0? array.get(0) : 0;
         return top;
@@ -158,9 +181,6 @@ class MinHeap {
     }
 
     public static void swap(List<Integer> array, int a, int b){
-        /**
-         * The arguments are passed by reference not by value
-         **/
         Integer temp = array.get(a);
         array.set(a, array.get(b));
         array.set(b, temp);
