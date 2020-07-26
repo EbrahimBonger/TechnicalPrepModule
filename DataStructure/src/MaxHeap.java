@@ -36,7 +36,7 @@ public class MaxHeap {
         /**
          * Test the methods here
          * **/
-        BuildMaxHeap(maxHeap);
+        buildMaxHeap(maxHeap);
         insert(maxHeap, 76);
         System.out.println("top: " + peak(maxHeap));
         remove(maxHeap);
@@ -52,7 +52,7 @@ public class MaxHeap {
 
     }
 
-    public static List<Integer> BuildMaxHeap(List<Integer> array){
+    public static List<Integer> buildMaxHeap(List<Integer> array){
         int heapSize = array.size();
         int numOfNonLeafNode = (heapSize/2)-1;
         /**
