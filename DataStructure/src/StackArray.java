@@ -1,5 +1,8 @@
 import java.util.*;
 public class StackArray {
+    /**
+     * Reference: https://www.youtube.com/watch?v=fptlqsesjxY&t=315s
+     * **/
     public static void main(String[] args){
         /**
          * Stack methods:
@@ -8,6 +11,7 @@ public class StackArray {
          *  Peek
          *  Show
          *  Resize
+         *  Size
          *  isEmpty
          * **/
         StackArray Stack = new StackArray();
