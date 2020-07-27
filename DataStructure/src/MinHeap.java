@@ -9,6 +9,11 @@ class MinHeap {
      * Reference: https://www.youtube.com/watch?v=t0Cq6tVNRBA&list=PL2veGun5Zfn3WRwsmc7RD1DpCI-ip7jRX
      *            https://www.youtube.com/watch?v=2fA1FdxNqiE
      *            https://www.youtube.com/watch?v=HI97KDV23Ig
+     *
+     * Complexity: https://www.youtube.com/watch?v=HI97KDV23Ig&t=618s
+     * Time: O(n)
+     * Space: O(logN)
+     *
      * Attention!
      * Array[(i-1/2)] return parent node in the current sub-tree
      * Array[(2*i)+1] return left child node in the current sub-tree
