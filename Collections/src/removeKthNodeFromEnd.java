@@ -23,7 +23,6 @@ class removeKthNodeFromEnd {
 
 
     }
-
     public static void removeKthNodeFromEnd(LinkedList head, int k) {
         // Write your code here.
         // shift the second node to kth places
