@@ -1,7 +1,10 @@
 import java.util.*;
 
 class FindLoopInLinkedList {
-    /** reference: https://www.algoexpert.io/questions/Find%20Loop
+    /** reference:
+     *             https://www.algoexpert.io/questions/Find%20Loop
+     *             https://www.youtube.com/watch?v=LUm2ABqAs1w&t=19s
+     *             https://www.youtube.com/watch?v=zbozWoMgKW0
     // **/
     public static LinkedList head;
     public static void main(String[] args){
