@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class StackArray {
+public class StackList {
+
     /**
      * Reference: https://www.youtube.com/watch?v=fptlqsesjxY&t=315s
      * **/
@@ -15,59 +16,52 @@ public class StackArray {
          *  Size
          *  isEmpty
          * **/
-        StackArray Stack = new StackArray();
-        Stack.push(9);
-        Stack.push(8);
-        Stack.pop();
-        Stack.push(7);
-        Stack.peek();
-        Stack.size();
-        Stack.show();
-        Stack.push(6);
+        LinkedList<Integer> Stack =  new LinkedList<Integer>();
+        push(9);
+        push(8);
+        pop();
+        push(7);
+        peek();
+        size();
+        show();
+        push(6);
     }
     // initialize the array
-    public static int[] Stack = new int[2];
-    public static int n = Stack.length;
+
+    public static LinkedList<Integer> Stack =  new LinkedList<Integer>();
+    public static int n = Stack.size();
     public static int top = 0;
     public static void push(int data){
         // check if the current array is full
-        if(top == n){
-            resize();
-        }
-        Stack[top] = data;
+
+        Stack.add(data);
         //once the data has been added, increment the top to the next empty index
         top++;
+        System.out.println("Pushed: " + data);
     }
     public static int pop(){
         int data = -1;
-        if(isEmpty() == false){
+        if(isEmpty() != true){
             // before the pop, decrement the top to point at the right index subject to removal
             top--;
-            data = Stack[top];
-            System.out.println("Pop: " + data);
-            Stack[top] = 0;
+            data = Stack.get(top);
+            System.out.println("Popped: " + data);
+            Stack.remove();
         }
         return data;
     }
     public static void peek(){
-        System.out.println("Top: " + Stack[top-1]);
+        System.out.println("Peeked: " + Stack.get(top-1));
     }
     public static void show(){
         System.out.print("Show: ");
         for(int i=0; i<top; i++){
-            System.out.print(Stack[i] + " ");
+            System.out.print(Stack.get(i) + " ");
         }
         System.out.println();
     }
-    public static void resize(){
-        int[] newArray = new int[n * 2];
-        System.arraycopy(Stack, 0, newArray, 0, n);
-        Stack = newArray;
-        System.out.println("Resized: " + Stack.length);
-
-    }
     public static void size(){
-        int n = Stack.length;
+        int n = Stack.size();
         System.out.println("Size: " + n);
     }
     public static boolean isEmpty(){
