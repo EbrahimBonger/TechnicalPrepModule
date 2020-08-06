@@ -47,7 +47,6 @@ public class MergeSortRecursively {
         mergeSort(lArr);
         mergeSort(rArr);
         merge(array, lArr, rArr);
-        System.out.println();
     }
 
     private static void merge(int[] array, int[] left, int[] right){
