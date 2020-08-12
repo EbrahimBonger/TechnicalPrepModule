@@ -44,22 +44,27 @@ class ShiftedBinarySearch {
         for(int i=1; i<n; i++){
             if(array[i-1] > array[i]){
                 if(array[0] <= target && array[i-1] >= target){
+                    // explore left half
                     return new int[] {0, i-1};
                 }else if(array[i] <= target && array[n-1] >= target){
+                    // explore right half
                     return new int[] {i, n-1};
 
                 }
 
             } else if(array[(n-1)-i] < array[n-i]){
                 if(array[n-1] >= target && array[(n-1)-i] <= target){
+                    // explore right half
                     return new int[] {(n-1)-i, n-1};
                 }else if(array[0] <= target && array[(n-2)-i] >= target){
+                    // explore left half
                     return new int[] {0, (n-2)-i};
 
                 }
 
             }
         }
+        // explore the whole array
         return new int[] {0, array.length-1};
     }
 
