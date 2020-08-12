@@ -34,10 +34,10 @@ public class Vestigium{
             HashMap<Integer, Integer> rowMap = new HashMap<Integer, Integer>();
             HashMap<Integer, Integer> colMap = new HashMap<Integer, Integer>();
 
-            for(int i=0; i<matrix.length; i++){
+            for(int i=0; i<n; i++){
                 boolean hasRowCheked = false;
                 boolean hasColCheked = false;
-                for(int j=0; j<matrix.length; j++ ){
+                for(int j=0; j<n; j++ ){
                     // check if the row has a repeated value
                     if(i == j){
                         sum+= matrix[i][j];
