@@ -11,7 +11,7 @@ class ShiftedBinarySearch {
         int[] array = {61, 71, 72, 73, 0, 1, 21, 33, 45, 45};
         int target = 33;
         int idx = shiftedBinarySearch(array, target);
-        System.out.println("Idx: " + idx);
+        System.out.println("The targeted value: " + target + " is located at Idx: " + idx);
     }
 
     public static int shiftedBinarySearch(int[] array, int target) {
@@ -40,12 +40,21 @@ class ShiftedBinarySearch {
         }
     }
     public static int[] returnShiftedIdx(int[] array, int target){
-        for(int i=1; i<array.length; i++){
+        int n = array.length;
+        for(int i=1; i<n; i++){
             if(array[i-1] > array[i]){
                 if(array[0] <= target && array[i-1] >= target){
                     return new int[] {0, i-1};
-                }else if(array[i] <= target && array[array.length-1] >= target){
-                    return new int[] {i, array.length-1};
+                }else if(array[i] <= target && array[n-1] >= target){
+                    return new int[] {i, n-1};
+
+                }
+
+            } else if(array[(n-1)-i] < array[n-i]){
+                if(array[n-1] >= target && array[(n-1)-i] <= target){
+                    return new int[] {(n-1)-i, n-1};
+                }else if(array[0] <= target && array[(n-2)-i] >= target){
+                    return new int[] {0, (n-2)-i};
 
                 }
 
