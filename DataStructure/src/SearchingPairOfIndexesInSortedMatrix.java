@@ -11,11 +11,11 @@ class SearchingPairOfIndexesInSortedMatrix {
                 {99, 100, 103, 106, 128, 1004},
         };
 
-        // testing searchInSortedMatrix method
+        // Testing searchInSortedMatrix method
         int targetExist = 44;
         int targetDoesNotExist = 43;
         searchInSortedMatrix(matrix, targetExist);
-        System.out.println();
+        System.out.println("");
         searchInSortedMatrix(matrix, targetDoesNotExist);
 
     }
