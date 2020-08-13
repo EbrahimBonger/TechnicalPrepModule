@@ -1,5 +1,5 @@
 
-class findFirstAndLasPosOfElementInSortedArray {
+class FindFirstAndLasPosOfElementInSortedArray {
     /**
      * Reference: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/
      *            https://www.youtube.com/watch?v=bU-q1OJ0KWw&t=321s
