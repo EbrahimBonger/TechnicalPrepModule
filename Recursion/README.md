@@ -3,7 +3,7 @@ How to approach problems to solve in recursive manner:
     Bottom-up: Start with knowing how to solve the problem for a simple case, 
                like a list with one element. Then figure 
                out how to solve the problem for two, and three elements, and so on.
-    Top-Down: Think about how you can devide the problem for case N into subproblems.
+    Top-Down: Think about how you can devide the problem for N case(s) into subproblem(s).
         Note: Becareful of overlaping between the cases.
     Half-Half: Devide the data set into half when you encounter problem like Sorted Binary Search, and recurse.
 Recursive vs. Iterative solutions:

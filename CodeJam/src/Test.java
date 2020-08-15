@@ -1,89 +1,39 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.io.*;
 
 public class Test{
     public static void main(String[] args){
-        char e = '[';
-        char f = '[';
-        String s = "";
-        System.out.print(s.length());
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int n = 6;
+        int f = fib(n);
+        printFebonachiRecursion(n);
 
-        if(e == f){
-            System.out.print(true);
-        }else{
-            System.out.print(false);
-        }
+        System.out.println("fib: " + f);
 
-        try(Scanner in = new Scanner(System.in)){
-            int cases = in.nextInt();
-            int n = in.nextInt();
-            int sum = 0;
-            for(int t=0; t<cases; t++){
-
-                int[][] matrix = new int[n][n];
-                int count=1;
-                for(int i=0; i<n; i++){
-                    for(int j=0; j<n; j++){
-                        matrix[i][j] = count++;
-                        System.out.print(matrix[i][j] + " : ");
-                        if(i==j){sum+=matrix[i][j];}
-                    }
-                    System.out.println();
-                }
-                int k=0;
-                int r = 0;
-                int c = 0;
-                checkVestigium(matrix, k, r, c);
-
-                //System.out.print("k: " + k + " r: " + r + " c: " + c);
-                //System.out.println();
-            }
-
-        }
     }
+    public static int fib(int n){
+        if(n == 0){return 0;}
+        if(n == 1){return 1;}
 
-    public static void checkVestigium(int[][] matrix, int k, int r, int c){
-        int n = matrix.length;
-        int repeatRow = 0;
-        int repeatCol = 0;
-        int sum  = 0;
-
-
-        HashMap<Integer, Integer> rowMap = new HashMap<Integer, Integer>();
-        HashMap<Integer, Integer> colMap = new HashMap<Integer, Integer>();
-
-        for(int i=0; i<n; i++){
-            boolean hasRowCheked = false;
-            boolean hasColCheked = false;
-            for(int j=0; j<n; j++ ){
-                // check if the row has a repeated value
-                if(i == j){
-                    sum+= matrix[i][j];
-                }
-                if(rowMap.containsKey(matrix[i][j]) && hasRowCheked == false){
-                    repeatRow++;
-                    rowMap.clear();
-                    hasRowCheked = true;
-                } else{
-                    rowMap.put(matrix[i][j], 1);
-                }
-                // check if the column has a repeated value
-                if(colMap.containsKey(matrix[j][i]) && hasColCheked == false){
-                    repeatCol++;
-                    colMap.clear();
-                    hasColCheked = true;
-                }else{
-                    colMap.put(matrix[j][i], 1);
-                }
-            }
-            rowMap.clear();
-            colMap.clear();
+        return fib(n-1) + fib(n-2);
+    }
+    private static List<BigInteger> dict = new ArrayList<BigInteger>();
+    public static void printFebonachiRecursion (int num){
+        if (num==1){
+            printFebonachiRecursion(num-1);
+            System.out.printf("Term %d: %d%n",num,1);
+            dict.add(BigInteger.ONE);
         }
-        k = sum;
-        r = repeatRow;
-        c = repeatCol;
-        System.out.print("k: " + sum + " r: " + repeatRow + " c: " + repeatCol);
-        System.out.println();
+        else if (num==0){
+            System.out.printf("Term %d: %d%n",num,0);
+            dict.add(BigInteger.ZERO);
+        }
+        else {
+            printFebonachiRecursion(num-1);
+            dict.add(dict.get(num-2).add(dict.get(num-1)));
+            System.out.printf("Term %d: %d%n",num,dict.get(num));
+        }
     }
 
 }
