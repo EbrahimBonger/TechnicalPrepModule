@@ -7,6 +7,11 @@ public class GridPathFinder {
      *
      * Book: Cracking The Coding Interview
      * Page: 344
+     * Problem: Robot in A Grid
+     *  Imagine a robot on the upper left corner of the grid with r rows and c columns.
+     *  The robot can only move in two directions, right and down, but certain cells are "off limits"
+     *  such that the robot cannot step on them. Design an algorithm to find a path
+     *  for a robot from top left to bottom right.
      * Reference: https://www.youtube.com/watch?v=P8Xa2BitN3I&t=35s
      *            https://www.youtube.com/watch?v=W9F8fDQj7Ok
      * (Watch the videos 'til the end)
@@ -15,19 +20,19 @@ public class GridPathFinder {
 
         System.out.println("Un-Memoize Solution: ");
         int[][] UnMemoizeMaze = new int[5][5];
-        
+
         // obstacles
         UnMemoizeMaze[0][2] = -1;
         UnMemoizeMaze[1][0] = -1;
         UnMemoizeMaze[2][2] = -1;
         UnMemoizeMaze[3][4] = -1;
         UnMemoizeMaze[4][0] = -1;
-        
+
         show(UnMemoizeMaze);
         ArrayList<Point> pathOne = findPathWithOutMemoization(UnMemoizeMaze);
         /** The path is , technically, the stack frame of the recursive call, because we start finding the path from the bottom right corner and trace back to the origin 0,0
          then, we able to stack the path from start due to the stack data structure LIFO policy
-        **/
+         **/
         System.out.print("UnMemoize Path: ");
         for(Point p : pathOne){
             System.out.print(p.x + "," + p.y + " : ");
@@ -71,7 +76,7 @@ public class GridPathFinder {
         if(maze == null || maze.length == 0){return null;}
         ArrayList<Point> path = new ArrayList<Point>();
         if(isValidPathWithOutMemoization(maze, maze.length-1, maze[0].length-1, path)){
-            
+
             return path;
         }
         return null;
@@ -81,7 +86,7 @@ public class GridPathFinder {
             return false;
         }
         boolean isOrigin = (row == 0) && (col == 0);
-        
+
         if(isOrigin || isValidPathWithOutMemoization(maze, row-1, col, path) || isValidPathWithOutMemoization(maze, row, col-1, path)){
             maze[row][col] = 1;
             Point p = new Point(row, col);
@@ -125,7 +130,7 @@ public class GridPathFinder {
         failedPoints.add(p);
         return false;
     }
-    
+
     public static void show(int[][] maze){
         int r = maze.length;
         int c = maze[0].length;
