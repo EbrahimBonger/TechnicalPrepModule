@@ -51,7 +51,7 @@ public class GridPathFinder {
         memoizeMaze[3][4] = -1;
         memoizeMaze[4][0] = -1;
 
-        show(UnMemoizeMaze);
+        show(memoizeMaze);
         ArrayList<Point> pathTwo = findPathWithMemoization(memoizeMaze);
         /** The path is , technically, the stack frame of the recursive call, because we start finding the path from the bottom right corner and trace back to the origin 0,0
          then, we able to stack the path from start due to the stack data structure LIFO policy
@@ -118,15 +118,18 @@ public class GridPathFinder {
         if(row < 0 || col < 0 || maze[row][col] == -1){
             return false;
         }
+        Point p = new Point(row, col);
+        if(failedPoints.contains(p)){
+            return false;
+        }
         boolean isOrigin = (row == 0) && (col == 0);
 
         if(isOrigin || isValidPathWithMemoization(maze, row-1, col, path, failedPoints) || isValidPathWithMemoization(maze, row, col-1, path, failedPoints)){
             maze[row][col] = 1;
-            Point p = new Point(row, col);
             path.add(p);
             return true;
         }
-        Point p = new Point(row, col);
+
         failedPoints.add(p);
         return false;
     }
