@@ -1,9 +1,9 @@
 import java.util.HashMap;
 
-public class TripleStep {
+public class TripleStepWithMemoization {
     /**
      * Book: Cracking the coding interview 6th edition
-     *
+     * Page: 134
      * Problem: A child is running up a staircase with n steps and
      * can hop either 1 step, 2 step, and 3 steps at a time.
      *
@@ -45,10 +45,8 @@ public class TripleStep {
      *         Formula: f(n) = f(n-1) + f(n-2) + f(n-3) , and so on as the Max number is increased.
      * **/
 
-    // Create a global cache to perform cache through Memoization
-
     public static void main(String[] args){
-        int stairs = 5;
+        int stairs = 3;
         int result = findWays(stairs);
         System.out.println("Ways of steps: " + result);
     }
@@ -60,18 +58,17 @@ public class TripleStep {
             return 0;
         } else if(stairs == 0){
             return 1;
-        }
-
-        if(cache.containsKey(stairs)){
+        } else if(cache.containsKey(stairs)){
             // if the the stair value being already added, return the value
-            cacheValue = cache.get(stairs);
+            return cache.get(stairs);
 
         } else {
             // otherwise, calculate the value
             cacheValue = findWays(stairs-1) + findWays(stairs-2) + findWays(stairs-3);
             // then store to the map for o(1) time use
             cache.put(stairs, cacheValue);
+            return cacheValue;
         }
-        return cacheValue;
+
     }
 }
