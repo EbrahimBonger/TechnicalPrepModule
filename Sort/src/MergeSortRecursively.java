@@ -6,7 +6,7 @@ public class MergeSortRecursively {
      *          : https://www.geeksforgeeks.org/merge-sort/
      * **/
     public static void main(String[] args){
-        int[] array = {2, 3, 5, 5, 6, 8, 9};
+        int[] array = {5,8,3,9,6,5,2};
         int n  = array.length;
         int m = n/2;
         mergeSort(array);
@@ -46,10 +46,12 @@ public class MergeSortRecursively {
         }
         mergeSort(lArr);
         mergeSort(rArr);
+
         merge(array, lArr, rArr);
     }
 
     private static void merge(int[] array, int[] left, int[] right){
+        int x = 0;
         int i=0, j=0, k=0;
         while(i<left.length && j<right.length){
             if(left[i]<= right[j]){
