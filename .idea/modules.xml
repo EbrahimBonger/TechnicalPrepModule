@@ -3,13 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BackTracking/BackTracking.iml" filepath="$PROJECT_DIR$/BackTracking/BackTracking.iml" />
       <module fileurl="file://$PROJECT_DIR$/BigO/BigO.iml" filepath="$PROJECT_DIR$/BigO/BigO.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sorting/BubbleSorting.iml" filepath="$PROJECT_DIR$/Sorting/BubbleSorting.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeJam/CodeJam.iml" filepath="$PROJECT_DIR$/CodeJam/CodeJam.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodingExercise/CodingExercise.iml" filepath="$PROJECT_DIR$/CodingExercise/CodingExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/Collections/Collections.iml" filepath="$PROJECT_DIR$/Collections/Collections.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/DataStructure/DataStructure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DevideANdConquer/DevideANdConquer.iml" filepath="$PROJECT_DIR$/DevideANdConquer/DevideANdConquer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DevideANdConquer/DevideAndConquer.iml" filepath="$PROJECT_DIR$/DevideANdConquer/DevideAndConquer.iml" />
       <module fileurl="file://$PROJECT_DIR$/DynamicProgramming/DynamicProgramming.iml" filepath="$PROJECT_DIR$/DynamicProgramming/DynamicProgramming.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lists/Lists.iml" filepath="$PROJECT_DIR$/Lists/Lists.iml" />
       <module fileurl="file://$PROJECT_DIR$/Recursion/Recursion.iml" filepath="$PROJECT_DIR$/Recursion/Recursion.iml" />
