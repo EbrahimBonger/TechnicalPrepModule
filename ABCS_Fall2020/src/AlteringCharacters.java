@@ -32,9 +32,9 @@ public class AlteringCharacters {
         return del;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) {
         String s = "AAAA";
         int x = alternatingCharacters(s);
         System.out.println("Deletion: " + x);
