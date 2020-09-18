@@ -1,52 +1,17 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
-public class MaxSubArrayAndSubSequence {
+import java.io.*;
+        import java.math.*;
+        import java.security.*;
+        import java.text.*;
+        import java.util.*;
+        import java.util.concurrent.*;
+        import java.util.regex.*;
+
+public class MaxSubArrayMaxSuSequenceCombined {
 
     // Complete the maxSubarray function below.
 
-//    static int[] maxSubarray(int[] arr) {
-//
-//        int[] result = new int[2];
-//        int maxSubSeq = -1;
-//        int maxSubArr = -1;
-//        if(arr.length==0){
-//            result[0] = 0;
-//            result[1] = 0;
-//            System.out.println("Size is 0 --> maxSubArr: " + result[0] + " maxSubSeq: " + result[1]);
-//            return result;
-//        } else if(arr.length==1){
-//            result[0] = arr[0];
-//            result[1] = arr[0];
-//            System.out.println("Size is 1 --> maxSubArr: " + result[0] + " maxSubSeq: " + result[1]);
-//            return result;
-//        }
-//
-//
-//
-//
-//
-//        maxSubArr = maxSubArr(arr, maxSubArr) > 0?maxSubArr(arr, maxSubArr): maxSubArr;
-//        maxSubSeq = maxSubSeq(arr, maxSubSeq) > 0?maxSubSeq(arr, maxSubSeq): maxSubSeq;
-//        result[0] = maxSubArr;
-//        result[1] = maxSubSeq;
-//        System.out.println("maxSubArr: " + maxSubArr + " maxSubSeq: " + maxSubSeq);
-//        return result;
-//    }
-    private static int maxSubSeq(int[] arr, int value){
-        for(int a: arr){
-            if(a > 0){
-                value = value < 0? 0: value;
-                value+=a;
-            }
-        }
-        return value;
-    }
+
 
     private static int recursiveMaxSubSeq(int[] arr, int left, int right){
         int mid = (left + right)/2;
@@ -141,13 +106,13 @@ public class MaxSubArrayAndSubSequence {
 
 
     public static void main(String[] args) {
-        int[] t = {1, 2, 3, 4};
+        int[] t = {1, 2,5,6,7,98,-1, 3, 4};
         //int[] t = {-10};
         //maxSubarray(t);
         int x = recursiveMaxSubSeq(t, 0, t.length-1);
-        int y = recursiveMaxSubArray(t, t.length-1);
+        //int y = recursiveMaxSubArray(t, t.length-1);
         int z = kadansApproach(t);
-        System.out.println("x: " + x + " y: " + y + " z: " + z);
+        System.out.println("SubSeq: " + x + " SubArray: " + z);
 
     }
 }

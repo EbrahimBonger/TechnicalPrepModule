@@ -21,7 +21,7 @@ class MaxSumSubArray {
 
     }
     // Time: O(n)
-    public static void kadansApproach(int[] nums){
+    public static int kadansApproach(int[] nums){
         int start = 0;
         int end = 0;
         int search = 0;
@@ -42,7 +42,8 @@ class MaxSumSubArray {
                 search = i+1;
             }
         }
-        System.out.println("The sum of Max sub array is in Kadans approach: " + Max_So_Far + " stating at idx: " + start + " and ending at idx: " + end);
+        //System.out.println("The sum of Max sub array is in Kadans approach: " + Max_So_Far + " stating at idx: " + start + " and ending at idx: " + end);
+        return Max_So_Far;
     }
 
     // The are some edge cases left to be handheld Time: O(logN)
