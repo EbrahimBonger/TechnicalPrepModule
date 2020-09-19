@@ -105,8 +105,28 @@ public class MaxSubArrayMaxSuSequenceCombined {
     }
 
 
+
+    private static int maxIncreasingSubSeq(int[] A){
+        int n = A.length;
+        int[] idx = new int[n];
+
+        int maxSum = idx[0];
+        maxSum = Math.max(A[0], maxSum);
+        for(int i=1; i<n; i++){
+            int j=0;
+            if(A[i] > idx[j]){
+            while(idx[j] > 0){
+                idx[j+1] = A[i] + maxSum;
+                j++;
+            }
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) {
-        int[] t = {1, 2,5,6,7,98,-1, 3, 4};
+        int[] t = {10,70,20,30,50,11,30};
         //int[] t = {-10};
         //maxSubarray(t);
         int x = recursiveMaxSubSeq(t, 0, t.length-1);
