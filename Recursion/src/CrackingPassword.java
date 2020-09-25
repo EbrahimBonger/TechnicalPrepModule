@@ -106,13 +106,13 @@ class CrackingPassword {
 
         //int[] ar = new int[]{4, 6, 5, 3, 3, 1};
 
-        System.out.println("pick: " + pickingNumbers(list));
+        //System.out.println("pick: " + pickingNumbers(list));
 
 
 
         String str = "wedowhatwemustbecausewecan";
         String result = passwordCracker(pass, str);
-        //System.out.println("\nresult: " + result);
+        System.out.println("\nresult: " + result);
 
     }
 
