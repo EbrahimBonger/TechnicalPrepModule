@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
 class MinHeap {
@@ -32,29 +33,44 @@ class MinHeap {
          * Convert int[] array to ArrayList
          * **/
         List<Integer> minHeap = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
+        /**
+         * 5
+         * 1 4
+         * 1 9
+         * 3
+         * 2 4
+         * 3
+         * **/
+        heap.add(4);
+        heap.add(9);
+        System.out.println(heap.peek());
+        heap.remove();
+        System.out.println(heap.peek());
 
 
 
-        System.out.print("Before:");
-        for(Integer e: minHeap){
-            System.out.print(e + " ");
-        }
+//        System.out.print("Before:");
+//        for(Integer e: minHeap){
+//            System.out.print(e + " ");
+//        }
 
         /**
          * Test the methods here
          * **/
         BuildMinHeap(minHeap);
         insert(minHeap, 76);
-        System.out.println("top: " + peak(minHeap));
+        //System.out.println("top: " + peak(minHeap));
         remove(minHeap);
-        System.out.println("top: " + peak(minHeap));
+        //System.out.println("top: " + peak(minHeap));
         remove(minHeap);
-        System.out.println("top: " + peak(minHeap));
+        //System.out.println("top: " + peak(minHeap));
         insert(minHeap, 87);
 
-        System.out.print("After:");
+        //System.out.print("After:");
         for(Integer e: minHeap){
-            System.out.print(e + " ");
+            //System.out.print(e + " ");
+
         }
 
     }

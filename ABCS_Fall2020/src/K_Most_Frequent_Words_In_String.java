@@ -1,27 +1,29 @@
-import java.io.*;
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+/**
+ * Reference: https://www.hackerrank.com/contests/noram-fa20-hashtables/challenges/k-most-frequent-words-in-a-string/submissions
+ *            https://leetcode.com/problems/top-k-frequent-words/discuss/913565/Map-Based-Java-Solution
+ * **/
 
-public class Test
+public class K_Most_Frequent_Words_In_String
 {
     public static List topKFrequent(String[] words, int k, HashMap<String, Integer> resultant) {
 
         Map<String, Integer> map = new TreeMap<>();
-        //HashMap<String, Integer> resultant = new HashMap<String, Integer>();
 
         for(String w: words){
             if(map.containsKey(w)){
-                 int newK = map.get(w) + 1;
-                 map.put(w, newK);
+                int newK = map.get(w) + 1;
+                map.put(w, newK);
 
-             }else{
+            }else{
 
-                 map.put(w, 1);
-             }
-             if(map.get(w) >= k){
-                 resultant.put(w, map.get(w));
-             }
-         }
+                map.put(w, 1);
+            }
+            if(map.get(w) >= k){
+                resultant.put(w, map.get(w));
+            }
+        }
 
         return resultant.entrySet()
                 .stream()
@@ -29,7 +31,6 @@ public class Test
                         m2.getValue().compareTo(m1.getValue()))
 
                 .map(m -> m.getKey()).collect(Collectors.toList());
-
     }
 
     public static void main ( String[] args)
